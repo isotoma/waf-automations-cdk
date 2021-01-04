@@ -44,7 +44,7 @@ export class WafSecurityAutomations extends cdk.Construct {
 
         const isCompleteHandler = new lambdaJs.NodejsFunction(this, 'waf-automations-complete', {
             ...providerFunctionShared,
-            handler: 'onComplete',
+            handler: 'isComplete',
         });
 
         const provider = new cr.Provider(this, 'waf-automations-provider', {
