@@ -7,5 +7,5 @@
 Run
 ```
 $ npm version (patch|minor|major)
-$ git push origin master [tag you just created]
+$ git push origin main [tag you just created]
 ```
