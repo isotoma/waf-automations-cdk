@@ -1,6 +1,7 @@
 import * as s3 from '@aws-cdk/aws-s3';
 import * as iam from '@aws-cdk/aws-iam';
 import * as lambda from '@aws-cdk/aws-lambda';
+import * as lambdaJs from '@aws-cdk/aws-lambda-nodejs';
 import * as cdk from '@aws-cdk/core';
 import * as cr from '@aws-cdk/custom-resources';
 import * as path from 'path';
@@ -23,32 +24,34 @@ export class WafSecurityAutomations extends cdk.Construct {
         }
         this.accessLogBucket = props.accessLogBucket;
         this.stackName = props.stackName ?? 'AWSWafSecurityAutomations';
-        const provider = new cr.Provider(this, 'waf-automations-provider', {
-            onEventHandler: new lambda.Function(this, 'waf-automations-event', {
-                code: lambda.Code.fromAsset(path.join(__dirname, 'provider')),
-                runtime: lambda.Runtime.NODEJS_12_X,
-                handler: 'index.onEvent',
-                timeout: cdk.Duration.minutes(15),
-                initialPolicy: [
-                    new iam.PolicyStatement({
-                        resources: ['*'],
-                        actions: ['*'],
-                    }),
-                ],
-            }),
-            isCompleteHandler: new lambda.Function(this, 'waf-automations-complete', {
-                code: lambda.Code.fromAsset(path.join(__dirname, 'provider')),
-                runtime: lambda.Runtime.NODEJS_12_X,
-                handler: 'index.isComplete',
-                timeout: cdk.Duration.minutes(15),
-                initialPolicy: [
-                    new iam.PolicyStatement({
-                        resources: ['*'],
-                        actions: ['*'],
-                    }),
-                ],
-            }),
+
+        const providerFunctionShared = {
+            entry: path.join(__dirname, 'provider', 'index.ts'),
+            runtime: lambda.Runtime.NODEJS_12_X,
+            timeout: cdk.Duration.minutes(15),
+            initialPolicy: [
+                new iam.PolicyStatement({
+                    resources: ['*'],
+                    actions: ['*'],
+                }),
+            ],
+        }
+
+        const onEventHandler = new lambdaJs.NodejsFunction(this, 'waf-automations-event', {
+            ...providerFunctionShared,
+            handler: 'index.onEvent',
         });
+
+        const isCompleteHandler = new lambdaJs.NodejsFunction(this, 'waf-automations-complete', {
+            ...providerFunctionShared,
+            handler: 'index.onComplete',
+        });
+
+        const provider = new cr.Provider(this, 'waf-automations-provider', {
+            onEventHandler,
+            isCompleteHandler,
+        });
+
         this.resource = new cdk.CustomResource(this, 'waf-automations', {
             serviceToken: provider.serviceToken,
             properties: {

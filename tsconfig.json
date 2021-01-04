@@ -3,7 +3,7 @@
     "target": "ES2018",
     "module": "commonjs",
     "lib": ["es2018"],
-    "outDir": "lib",
+    "outDir": "build",
     "declaration": true,
     "strict": true,
     "noImplicitAny": true,

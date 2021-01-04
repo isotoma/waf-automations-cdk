@@ -1,3 +1,3 @@
 provider/node_modules
-lib
-provider/node_modules
+build
+node_modules
