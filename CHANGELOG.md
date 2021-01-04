@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [1.1.3](https://github.com/isotoma/waf-automations-cdk/compare/1.1.2...1.1.3)
+
+- Fix complete handler name [`738d2a1`](https://github.com/isotoma/waf-automations-cdk/commit/738d2a148fe4195568cddf94b274bc46d2005506)
+
 #### [1.1.2](https://github.com/isotoma/waf-automations-cdk/compare/1.1.1...1.1.2)
+
+> 4 January 2021
 
 - Fix provider handlers to remove incorrect 'index' prefix [`d362c20`](https://github.com/isotoma/waf-automations-cdk/commit/d362c20d0c894fec6007ca50bd922fdaa94501ae)
 
