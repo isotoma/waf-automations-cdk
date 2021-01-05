@@ -83,11 +83,11 @@ export const onEvent = (event: CloudFormationCustomResourceEvent): Promise<Cloud
     try {
         switch (event.RequestType) {
             case 'Create':
-                return onCreate(event as CloudFormationCustomResourceCreateEvent);
+                return onCreate(event);
             case 'Update':
-                return onUpdate(event as CloudFormationCustomResourceUpdateEvent);
+                return onUpdate(event);
             case 'Delete':
-                return onDelete(event as CloudFormationCustomResourceDeleteEvent);
+                return onDelete(event);
             default:
                 return Promise.reject(`Unknown event type in event ${event}`);
         }
