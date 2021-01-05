@@ -7,7 +7,17 @@ import * as cr from '@aws-cdk/custom-resources';
 import * as path from 'path';
 import { countReset } from 'console';
 
+interface WafSecurityAutomationsOptions {
+    // See https://github.com/awslabs/aws-waf-security-automations/releases for released versions
+    readonly templateVersion: string;
+}
+
+const optionsDefaults: WafSecurityAutomationsOptions = {
+    templateVersion: 'latest',
+};
+
 export class WafSecurityAutomationsProps {
+    readonly options?: Partial<WafSecurityAutomationsOptions>;
     readonly accessLogBucket: s3.IBucket;
     readonly stackName: string;
 }
@@ -24,6 +34,11 @@ export class WafSecurityAutomations extends cdk.Construct {
         }
         this.accessLogBucket = props.accessLogBucket;
         this.stackName = props.stackName ?? 'AWSWafSecurityAutomations';
+
+        const options = {
+            ...optionsDefaults,
+            ...(props.options ?? {}),
+        };
 
         const providerFunctionShared = {
             entry: path.join(__dirname, 'provider', 'index.ts'),
@@ -57,6 +72,7 @@ export class WafSecurityAutomations extends cdk.Construct {
             properties: {
                 StackName: this.stackName,
                 AccessLogBucketName: this.accessLogBucket.bucketName,
+                TemplateVersion: options.templateVersion,
             },
         });
     }
