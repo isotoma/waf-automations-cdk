@@ -5,7 +5,6 @@ import * as lambdaJs from '@aws-cdk/aws-lambda-nodejs';
 import * as cdk from '@aws-cdk/core';
 import * as cr from '@aws-cdk/custom-resources';
 import * as path from 'path';
-import { countReset } from 'console';
 
 interface WafSecurityAutomationsOptions {
     // See https://github.com/awslabs/aws-waf-security-automations/releases for released versions
@@ -50,7 +49,7 @@ export class WafSecurityAutomations extends cdk.Construct {
                     actions: ['*'],
                 }),
             ],
-        }
+        };
 
         const onEventHandler = new lambdaJs.NodejsFunction(this, 'waf-automations-event', {
             ...providerFunctionShared,
