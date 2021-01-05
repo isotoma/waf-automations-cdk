@@ -2,7 +2,15 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [1.2.0](https://github.com/isotoma/waf-automations-cdk/compare/1.1.3...1.2.0)
+
+- Remove type coercion in provider [`#9`](https://github.com/isotoma/waf-automations-cdk/pull/9)
+- Linting configuration and fixes [`#8`](https://github.com/isotoma/waf-automations-cdk/pull/8)
+- Fix for updates and handle selected template version [`#7`](https://github.com/isotoma/waf-automations-cdk/pull/7)
+
 #### [1.1.3](https://github.com/isotoma/waf-automations-cdk/compare/1.1.2...1.1.3)
+
+> 4 January 2021
 
 - Fix complete handler name [`738d2a1`](https://github.com/isotoma/waf-automations-cdk/commit/738d2a148fe4195568cddf94b274bc46d2005506)
 
