@@ -7,6 +7,7 @@ import {
 } from 'aws-lambda';
 import * as AWS from 'aws-sdk';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const log = (item: Record<string, any>): void => {
     console.log(JSON.stringify(item));
 };
@@ -15,7 +16,9 @@ const getTemplateUrl = (version: string): string => {
     return `https://s3.amazonaws.com/solutions-reference/aws-waf-security-automations/${version}/aws-waf-security-automations.template`;
 };
 
-const sdkArgsForCreateOrUpdate = (event: CloudFormationCustomResourceCreateEvent | CloudFormationCustomResourceUpdateEvent): AWS.CloudFormation.Types.CreateStackInput & AWS.CloudFormation.Types.UpdateStackInput => {
+const sdkArgsForCreateOrUpdate = (
+    event: CloudFormationCustomResourceCreateEvent | CloudFormationCustomResourceUpdateEvent,
+): AWS.CloudFormation.Types.CreateStackInput & AWS.CloudFormation.Types.UpdateStackInput => {
     const accessLogBucketName = event.ResourceProperties.AccessLogBucketName;
     const stackName = event.ResourceProperties.StackName;
     const templateUrl = getTemplateUrl(event.ResourceProperties.TemplateVersion ?? 'latest');
@@ -34,34 +37,33 @@ const sdkArgsForCreateOrUpdate = (event: CloudFormationCustomResourceCreateEvent
     };
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const onCreate = async (event: CloudFormationCustomResourceCreateEvent): Promise<any> => {
-    log({message: 'Running onCreate'});
+    log({ message: 'Running onCreate' });
     const args = sdkArgsForCreateOrUpdate(event);
     const cfn = new AWS.CloudFormation({ region: 'us-east-1' });
-    const response = await cfn
-        .createStack(args)
-        .promise();
-    log({message: 'Ran createStack', response});
+    const response = await cfn.createStack(args).promise();
+    log({ message: 'Ran createStack', response });
     return {
         PhysicalResourceId: args.StackName,
     };
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const onUpdate = async (event: CloudFormationCustomResourceUpdateEvent): Promise<any> => {
-    log({message: 'Running onUpdate'});
+    log({ message: 'Running onUpdate' });
     const args = sdkArgsForCreateOrUpdate(event);
     const cfn = new AWS.CloudFormation({ region: 'us-east-1' });
-    const response = await cfn
-        .updateStack(args)
-        .promise();
-    log({message: 'Ran updateStack', response});
+    const response = await cfn.updateStack(args).promise();
+    log({ message: 'Ran updateStack', response });
     return {
         PhysicalResourceId: args.StackName,
     };
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const onDelete = async (event: CloudFormationCustomResourceDeleteEvent): Promise<any> => {
-    log({message: 'Running onDelete'});
+    log({ message: 'Running onDelete' });
 
     const cfn = new AWS.CloudFormation({ region: 'us-east-1' });
     const response = await cfn
@@ -70,14 +72,14 @@ export const onDelete = async (event: CloudFormationCustomResourceDeleteEvent): 
             ClientRequestToken: event.RequestId,
         })
         .promise();
-    log({message: 'Ran deleteStack', response});
+    log({ message: 'Ran deleteStack', response });
     return {
         PhysicalResourceId: event.PhysicalResourceId,
     };
 };
 
 export const onEvent = (event: CloudFormationCustomResourceEvent): Promise<CloudFormationCustomResourceResponse> => {
-    log({message: 'Starting onEvent', event})
+    log({ message: 'Starting onEvent', event });
     try {
         switch (event.RequestType) {
             case 'Create':
@@ -95,8 +97,9 @@ export const onEvent = (event: CloudFormationCustomResourceEvent): Promise<Cloud
     }
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const isComplete = async (event: CloudFormationCustomResourceEvent): Promise<any> => {
-    log({message: 'Starting isComplete', event})
+    log({ message: 'Starting isComplete', event });
     const StackName = event.ResourceProperties.StackName;
     const cfn = new AWS.CloudFormation({ region: 'us-east-1' });
     const response = await cfn
