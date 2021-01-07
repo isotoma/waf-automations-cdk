@@ -9,10 +9,36 @@ import * as path from 'path';
 interface WafSecurityAutomationsOptions {
     // See https://github.com/awslabs/aws-waf-security-automations/releases for released versions
     readonly templateVersion: string;
+    readonly activateSqlInjectionProtection: boolean | undefined;
+    readonly activateCrossSiteScriptingProtection: boolean | undefined;
+    readonly activateHttpFloodProtection: boolean | undefined;
+    readonly httpFloodProtectionMethod: 'waf' | 'lambda' | 'athena' | undefined;
+    readonly activateScannersProbesProtection: boolean | undefined;
+    readonly scannersProbesProtectionMethod: 'lambda' | 'athena' | undefined;
+    readonly activateReputationListsProtection: boolean | undefined;
+    readonly activateBadBotProtection: boolean | undefined;
+    readonly endpointType: 'cloudfront' | 'alb' | undefined;
+    readonly requestThreshold: number | undefined;
+    readonly errorThreshold: number | undefined;
+    readonly wafBlockPeriod: number | undefined;
+    readonly keepDataInOriginalS3Location: boolean | undefined;
 }
 
 const optionsDefaults: WafSecurityAutomationsOptions = {
     templateVersion: 'latest',
+    activateSqlInjectionProtection: undefined,
+    activateCrossSiteScriptingProtection: undefined,
+    activateHttpFloodProtection: undefined,
+    httpFloodProtectionMethod: undefined,
+    activateScannersProbesProtection: undefined,
+    scannersProbesProtectionMethod: undefined,
+    activateReputationListsProtection: undefined,
+    activateBadBotProtection: undefined,
+    endpointType: undefined,
+    requestThreshold: undefined,
+    errorThreshold: undefined,
+    wafBlockPeriod: undefined,
+    keepDataInOriginalS3Location: undefined,
 };
 
 export class WafSecurityAutomationsProps {
@@ -72,6 +98,7 @@ export class WafSecurityAutomations extends cdk.Construct {
                 StackName: this.stackName,
                 AccessLogBucketName: this.accessLogBucket.bucketName,
                 TemplateVersion: options.templateVersion,
+                Options: JSON.stringify(options),
             },
         });
     }
