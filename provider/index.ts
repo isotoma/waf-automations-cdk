@@ -250,6 +250,53 @@ export const onEvent = (event: CloudFormationCustomResourceEvent): Promise<Cloud
     }
 };
 
+interface WebAclProps {
+    readonly WebAclName: string;
+    readonly WebAclArn: string;
+    readonly WebAclId: string;
+    readonly WebAclDescription: string;
+}
+
+const lookupWebAclByName = async (webAclName: string): Promise<WebAclProps | undefined> => {
+    const wafv2 = new AWS.WAFV2({ region: 'us-east-1' });
+    // TODO: handle regional WAF
+
+    const response = await wafv2
+        .listWebACLs({
+            Scope: 'CLOUDFRONT',
+        })
+        .promise();
+
+    const acls = response.WebACLs;
+
+    if (typeof acls === 'undefined') {
+        return undefined;
+    }
+
+    const matching = acls.filter((acl: AWS.WAFV2.Types.WebACLSummary): boolean => {
+        return acl.Name === webAclName;
+    });
+
+    if (matching.length === 0) {
+        log({ message: 'No matching ACLs found' });
+        return undefined;
+    }
+
+    if (matching.length !== 1) {
+        log({ message: 'Multiple matching ACLs found' });
+        return undefined;
+    }
+
+    const matchingAcl = acls[0];
+
+    return {
+        WebAclName: matchingAcl.Name || '',
+        WebAclArn: matchingAcl.ARN || '',
+        WebAclId: matchingAcl.Id || '',
+        WebAclDescription: matchingAcl.Description || '',
+    };
+};
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const isComplete = async (event: CloudFormationCustomResourceEvent): Promise<any> => {
     log({ message: 'Starting isComplete', event });
@@ -261,7 +308,15 @@ export const isComplete = async (event: CloudFormationCustomResourceEvent): Prom
         })
         .promise();
     if (response.Stacks && response.Stacks[0].StackStatus.endsWith('COMPLETE')) {
-        return { IsComplete: true };
+        // The created WebAcl is named to match the stack
+        let data: WebAclProps | undefined = undefined;
+        try {
+            data = await lookupWebAclByName(StackName);
+        } catch (err) {
+            console.error(err);
+        }
+        log({ message: 'Returning with data', data, typeofData: typeof data });
+        return { IsComplete: true, Data: data };
     } else {
         return { IsComplete: false };
     }
