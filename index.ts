@@ -25,7 +25,7 @@ interface WafSecurityAutomationsOptions {
 }
 
 const optionsDefaults: WafSecurityAutomationsOptions = {
-    templateVersion: 'latest',
+    templateVersion: 'v3.1.0',
     activateSqlInjectionProtection: undefined,
     activateCrossSiteScriptingProtection: undefined,
     activateHttpFloodProtection: undefined,
