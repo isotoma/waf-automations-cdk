@@ -16,9 +16,9 @@ new WafSecurityAutomations(this, 'waf-security-automations', {
 
 All are optional
 
-| Attribute         | Default    | Description                                                                                                                                       |
-| ---------         | -------    | -----------                                                                                                                                       |
-| `templateVersion` | `'latest'` | See [releases](https://github.com/awslabs/aws-waf-security-automations/releases). Best to select a version rather than using the dynamic `latest` |
+| Attribute         | Default    | Description                                                                       |
+| ---------         | -------    | -----------                                                                       |
+| `templateVersion` | `'v3.1.0'` | See [releases](https://github.com/awslabs/aws-waf-security-automations/releases). |
 
 ## Development
 
