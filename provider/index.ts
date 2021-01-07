@@ -155,9 +155,9 @@ const loadParametersFromOptions = (optionsJson: unknown): Array<CloudformationPa
         createParameter('ActivateReputationListsProtectionParam', simpleBooleanValue(options.activateReputationListsProtection)),
         createParameter('ActivateBadBotProtectionParam', simpleBooleanValue(options.activateBadBotProtection)),
         createParameter('EndpointType', endpointTypeValue(options.endpointType)),
-        createParameter('ErrorThreshold', numberValue(options.errorThreshold)),
-        createParameter('RequestThreshold', numberValue(options.requestThreshold)),
-        createParameter('WAFBlockPeriod', numberValue(options.wafBlockPeriod)),
+        createParameter('ErrorThreshold', numberValue(options.errorThresholdPerMinute)),
+        createParameter('RequestThreshold', numberValue(options.requestThresholdPerFiveMinutes)),
+        createParameter('WAFBlockPeriod', numberValue(options.wafBlockPeriodMinutes)),
         createParameter('KeepDataInOriginalS3Location', simpleBooleanValueCapitalised(options.keepDataInOriginalS3Location)),
     ];
 
