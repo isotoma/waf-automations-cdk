@@ -34,7 +34,7 @@
   "scripts": {
     "clean": "rm -rf ./build",
     "compile": "tsc",
-    "build": "npm run clean && npm run compile && cp -r provider ./build/provider && rm -rf ./build/provider/node_modules && cp package.json ./build",
+    "build": "npm run clean && npm run compile && cp -r provider ./build/provider && rm -rf ./build/provider/node_modules && cp package.json README.md ./build",
     "version": "auto-changelog --hide-credit -p && git add CHANGELOG.md",
     "lint": "eslint 'index.ts' 'provider/**/*.ts'  '{.,}*.{js,json}' --fix",
     "lint-check": "eslint 'index.ts' 'provider/**/*.ts' '{.,}*.{js,json}' --max-warnings 0",
