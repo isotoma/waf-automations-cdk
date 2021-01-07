@@ -18,9 +18,9 @@ interface WafSecurityAutomationsOptions {
     readonly activateReputationListsProtection: boolean | undefined;
     readonly activateBadBotProtection: boolean | undefined;
     readonly endpointType: 'cloudfront' | 'alb' | undefined;
-    readonly requestThreshold: number | undefined;
-    readonly errorThreshold: number | undefined;
-    readonly wafBlockPeriod: number | undefined;
+    readonly requestThresholdPerFiveMinutes: number | undefined;
+    readonly errorThresholdPerMinute: number | undefined;
+    readonly wafBlockPeriodMinutes: number | undefined;
     readonly keepDataInOriginalS3Location: boolean | undefined;
 }
 
@@ -35,9 +35,9 @@ const optionsDefaults: WafSecurityAutomationsOptions = {
     activateReputationListsProtection: true,
     activateBadBotProtection: true,
     endpointType: 'cloudfront',
-    requestThreshold: 100,
-    errorThreshold: 50,
-    wafBlockPeriod: 240,
+    requestThresholdPerFiveMinutes: 100,
+    errorThresholdPerMinute: 50,
+    wafBlockPeriodMinutes: 240,
     keepDataInOriginalS3Location: false,
 };
 
