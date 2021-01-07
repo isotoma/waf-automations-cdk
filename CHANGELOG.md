@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
-#### [2.0.0](https://github.com/isotoma/waf-automations-cdk/compare/1.2.0...2.0.0)
+#### [2.0.1](https://github.com/isotoma/waf-automations-cdk/compare/2.0.0...2.0.1)
+
+- Include README when building [`6acd074`](https://github.com/isotoma/waf-automations-cdk/commit/6acd074c6d0b98921c97bb1d7492a7c16c158f78)
+
+### [2.0.0](https://github.com/isotoma/waf-automations-cdk/compare/1.2.0...2.0.0)
+
+> 7 January 2021
 
 - Document warning about regional WAF [`#17`](https://github.com/isotoma/waf-automations-cdk/pull/17)
 - Do not test on node10 [`#16`](https://github.com/isotoma/waf-automations-cdk/pull/16)
