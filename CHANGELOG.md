@@ -2,7 +2,19 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [2.0.0](https://github.com/isotoma/waf-automations-cdk/compare/1.2.0...2.0.0)
+
+- Document warning about regional WAF [`#17`](https://github.com/isotoma/waf-automations-cdk/pull/17)
+- Do not test on node10 [`#16`](https://github.com/isotoma/waf-automations-cdk/pull/16)
+- Retrieve attributes from created webACL [`#15`](https://github.com/isotoma/waf-automations-cdk/pull/15)
+- More explicit option names [`#13`](https://github.com/isotoma/waf-automations-cdk/pull/13)
+- Documentation for options [`#12`](https://github.com/isotoma/waf-automations-cdk/pull/12)
+- Default to v3.1.0 of the cloudformation template [`#11`](https://github.com/isotoma/waf-automations-cdk/pull/11)
+- Add options to handle the switches and settings [`#10`](https://github.com/isotoma/waf-automations-cdk/pull/10)
+
 #### [1.2.0](https://github.com/isotoma/waf-automations-cdk/compare/1.1.3...1.2.0)
+
+> 5 January 2021
 
 - Remove type coercion in provider [`#9`](https://github.com/isotoma/waf-automations-cdk/pull/9)
 - Linting configuration and fixes [`#8`](https://github.com/isotoma/waf-automations-cdk/pull/8)
