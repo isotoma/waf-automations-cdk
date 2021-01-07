@@ -26,19 +26,19 @@ interface WafSecurityAutomationsOptions {
 
 const optionsDefaults: WafSecurityAutomationsOptions = {
     templateVersion: 'v3.1.0',
-    activateSqlInjectionProtection: undefined,
-    activateCrossSiteScriptingProtection: undefined,
-    activateHttpFloodProtection: undefined,
-    httpFloodProtectionMethod: undefined,
-    activateScannersProbesProtection: undefined,
-    scannersProbesProtectionMethod: undefined,
-    activateReputationListsProtection: undefined,
-    activateBadBotProtection: undefined,
-    endpointType: undefined,
-    requestThreshold: undefined,
-    errorThreshold: undefined,
-    wafBlockPeriod: undefined,
-    keepDataInOriginalS3Location: undefined,
+    activateSqlInjectionProtection: true,
+    activateCrossSiteScriptingProtection: true,
+    activateHttpFloodProtection: true,
+    httpFloodProtectionMethod: 'waf',
+    activateScannersProbesProtection: true,
+    scannersProbesProtectionMethod: 'lambda',
+    activateReputationListsProtection: true,
+    activateBadBotProtection: true,
+    endpointType: 'cloudfront',
+    requestThreshold: 100,
+    errorThreshold: 50,
+    wafBlockPeriod: 240,
+    keepDataInOriginalS3Location: false,
 };
 
 export class WafSecurityAutomationsProps {
