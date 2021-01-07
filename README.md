@@ -3,13 +3,19 @@
 ## Usage
 
 ```typescript
-new WafSecurityAutomations(this, 'waf-security-automations', {
+const wafAutomations = new WafSecurityAutomations(this, 'waf-security-automations', {
     stackName: 'waf-security-automations',
     accessLogBucket: myLogBucket,
     options: {
         // See below
     },
 });
+
+// Can now use the following:
+wafAutomations.webAclName  // string, the name of the created webAcl, will match stackName due to implementation of the cfn template
+wafAutomations.webAclArn  // string, arn of the created webAcl, pass this to a Cloudfront distribution
+wafAutomations.webAclId   // string
+wafAutomations.webAclDescription  // string
 ```
 
 This creates a WAFv2 WebACL named matching the `stackName`.

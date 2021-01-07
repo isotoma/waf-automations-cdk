@@ -51,6 +51,10 @@ export class WafSecurityAutomations extends cdk.Construct {
     public readonly accessLogBucket: s3.IBucket;
     public readonly stackName: string;
     public readonly resource: cdk.CustomResource;
+    public readonly webAclName: string;
+    public readonly webAclArn: string;
+    public readonly webAclId: string;
+    public readonly webAclDescription: string;
 
     constructor(scope: cdk.Construct, id: string, props: WafSecurityAutomationsProps) {
         super(scope, id);
@@ -101,5 +105,10 @@ export class WafSecurityAutomations extends cdk.Construct {
                 Options: JSON.stringify(options),
             },
         });
+
+        this.webAclName = this.resource.getAttString('WebAclName');
+        this.webAclArn = this.resource.getAttString('WebAclArn');
+        this.webAclId = this.resource.getAttString('WebAclId');
+        this.webAclDescription = this.resource.getAttString('WebAclDescription');
     }
 }
