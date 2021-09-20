@@ -2,7 +2,19 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [2.0.2](https://github.com/isotoma/waf-automations-cdk/compare/2.0.1...2.0.2)
+
+- Bump y18n from 4.0.0 to 4.0.1 [`#19`](https://github.com/isotoma/waf-automations-cdk/pull/19)
+- Bump handlebars from 4.7.6 to 4.7.7 [`#20`](https://github.com/isotoma/waf-automations-cdk/pull/20)
+- Bump hosted-git-info from 2.8.8 to 2.8.9 [`#21`](https://github.com/isotoma/waf-automations-cdk/pull/21)
+- Bump lodash from 4.17.19 to 4.17.21 [`#22`](https://github.com/isotoma/waf-automations-cdk/pull/22)
+- Bump ws from 7.3.1 to 7.4.6 [`#23`](https://github.com/isotoma/waf-automations-cdk/pull/23)
+- Bump glob-parent from 5.1.1 to 5.1.2 [`#24`](https://github.com/isotoma/waf-automations-cdk/pull/24)
+- Bump path-parse from 1.0.6 to 1.0.7 [`#25`](https://github.com/isotoma/waf-automations-cdk/pull/25)
+
 #### [2.0.1](https://github.com/isotoma/waf-automations-cdk/compare/2.0.0...2.0.1)
+
+> 7 January 2021
 
 - Include README when building [`6acd074`](https://github.com/isotoma/waf-automations-cdk/commit/6acd074c6d0b98921c97bb1d7492a7c16c158f78)
 
