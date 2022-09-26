@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [2.2.0](https://github.com/isotoma/waf-automations-cdk/compare/2.1.1...2.2.0)
+
+- Use node14 [`#35`](https://github.com/isotoma/waf-automations-cdk/pull/35)
+
 #### [2.1.1](https://github.com/isotoma/waf-automations-cdk/compare/2.1.0...2.1.1)
+
+> 26 September 2022
 
 - Fix core CDK import for cdkv2 [`ea82583`](https://github.com/isotoma/waf-automations-cdk/commit/ea8258303a757aa67f684ba3612720b393c90870)
 
