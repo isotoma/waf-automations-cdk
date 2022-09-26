@@ -2,7 +2,14 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [2.1.0](https://github.com/isotoma/waf-automations-cdk/compare/2.0.2...2.1.0)
+
+- Add cdkv2 support [`#31`](https://github.com/isotoma/waf-automations-cdk/pull/31)
+- Add .nvmrc [`82759a6`](https://github.com/isotoma/waf-automations-cdk/commit/82759a62d438f5d8d206fa9455c3170c9086706b)
+
 #### [2.0.2](https://github.com/isotoma/waf-automations-cdk/compare/2.0.1...2.0.2)
+
+> 20 September 2021
 
 - Bump y18n from 4.0.0 to 4.0.1 [`#19`](https://github.com/isotoma/waf-automations-cdk/pull/19)
 - Bump handlebars from 4.7.6 to 4.7.7 [`#20`](https://github.com/isotoma/waf-automations-cdk/pull/20)
