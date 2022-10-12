@@ -23,6 +23,9 @@
     "@aws-cdk/aws-lambda-nodejs": {
       "optional": true
     },
+    "@aws-cdk/aws-s3": {
+      "optional": true
+    },
     "@aws-cdk/core": {
       "optional": true
     },
