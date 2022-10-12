@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [2.2.1](https://github.com/isotoma/waf-automations-cdk/compare/2.2.0...2.2.1)
+
+- Fix peer dependencies [`#36`](https://github.com/isotoma/waf-automations-cdk/pull/36)
+
 #### [2.2.0](https://github.com/isotoma/waf-automations-cdk/compare/2.1.1...2.2.0)
+
+> 26 September 2022
 
 - Use node14 [`#35`](https://github.com/isotoma/waf-automations-cdk/pull/35)
 
