@@ -1,6 +1,6 @@
 {
   "name": "waf-automations-cdk",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Deploy the AWS WAF Automations",
   "main": "build/index.js",
   "peerDependencies": {

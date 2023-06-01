@@ -2,7 +2,24 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
-#### [3.0.0](https://github.com/isotoma/waf-automations-cdk/compare/2.2.1...3.0.0)
+#### [3.0.1](https://github.com/isotoma/waf-automations-cdk/compare/3.0.0...3.0.1)
+
+- Bump jsdom from 16.3.0 to 16.7.0 [`#29`](https://github.com/isotoma/waf-automations-cdk/pull/29)
+- Bump minimatch, @aws-cdk/aws-iam, @aws-cdk/aws-lambda, @aws-cdk/aws-lambda-nodejs, @aws-cdk/aws-s3, @aws-cdk/core and @aws-cdk/custom-resources [`#37`](https://github.com/isotoma/waf-automations-cdk/pull/37)
+- Bump tmpl from 1.0.4 to 1.0.5 [`#26`](https://github.com/isotoma/waf-automations-cdk/pull/26)
+- Bump ansi-regex from 4.1.0 to 4.1.1 [`#32`](https://github.com/isotoma/waf-automations-cdk/pull/32)
+- Bump xml2js from 0.4.19 to 0.5.0 in /provider [`#43`](https://github.com/isotoma/waf-automations-cdk/pull/43)
+- Bump node-fetch from 2.6.1 to 2.6.7 [`#30`](https://github.com/isotoma/waf-automations-cdk/pull/30)
+- Bump json-schema and jsprim [`#33`](https://github.com/isotoma/waf-automations-cdk/pull/33)
+- Bump node-notifier and @jest/reporters [`#34`](https://github.com/isotoma/waf-automations-cdk/pull/34)
+- Bump decode-uri-component from 0.2.0 to 0.2.2 [`#38`](https://github.com/isotoma/waf-automations-cdk/pull/38)
+- Bump qs from 6.5.2 to 6.5.3 [`#39`](https://github.com/isotoma/waf-automations-cdk/pull/39)
+- Bump json5 from 2.1.3 to 2.2.3 [`#40`](https://github.com/isotoma/waf-automations-cdk/pull/40)
+- Bump minimist from 1.2.5 to 1.2.8 [`#41`](https://github.com/isotoma/waf-automations-cdk/pull/41)
+
+### [3.0.0](https://github.com/isotoma/waf-automations-cdk/compare/2.2.1...3.0.0)
+
+> 1 June 2023
 
 - Change index exports to cdkv2 [`#42`](https://github.com/isotoma/waf-automations-cdk/pull/42)
 
