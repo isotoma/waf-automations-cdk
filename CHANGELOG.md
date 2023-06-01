@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [3.0.0](https://github.com/isotoma/waf-automations-cdk/compare/2.2.1...3.0.0)
+
+- Change index exports to cdkv2 [`#42`](https://github.com/isotoma/waf-automations-cdk/pull/42)
+
 #### [2.2.1](https://github.com/isotoma/waf-automations-cdk/compare/2.2.0...2.2.1)
+
+> 12 October 2022
 
 - Fix peer dependencies [`#36`](https://github.com/isotoma/waf-automations-cdk/pull/36)
 
