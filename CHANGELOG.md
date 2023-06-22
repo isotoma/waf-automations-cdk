@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [3.0.2](https://github.com/isotoma/waf-automations-cdk/compare/3.0.1...3.0.2)
+
+- Remove deprecated "main" from package.json [`#45`](https://github.com/isotoma/waf-automations-cdk/pull/45)
+
 #### [3.0.1](https://github.com/isotoma/waf-automations-cdk/compare/3.0.0...3.0.1)
+
+> 1 June 2023
 
 - Bump jsdom from 16.3.0 to 16.7.0 [`#29`](https://github.com/isotoma/waf-automations-cdk/pull/29)
 - Bump minimatch, @aws-cdk/aws-iam, @aws-cdk/aws-lambda, @aws-cdk/aws-lambda-nodejs, @aws-cdk/aws-s3, @aws-cdk/core and @aws-cdk/custom-resources [`#37`](https://github.com/isotoma/waf-automations-cdk/pull/37)
