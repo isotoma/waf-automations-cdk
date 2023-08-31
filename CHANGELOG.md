@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [4.0.0](https://github.com/isotoma/waf-automations-cdk/compare/3.0.2...4.0.0)
+
+- Remove CDK v1 support [`#48`](https://github.com/isotoma/waf-automations-cdk/pull/48)
+
 #### [3.0.2](https://github.com/isotoma/waf-automations-cdk/compare/3.0.1...3.0.2)
+
+> 22 June 2023
 
 - Remove deprecated "main" from package.json [`#45`](https://github.com/isotoma/waf-automations-cdk/pull/45)
 
