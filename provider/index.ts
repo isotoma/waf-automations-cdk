@@ -23,7 +23,10 @@ const filterUndefined = <A>(items: Array<A | undefined>): Array<A> => {
 };
 
 const getTemplateUrl = (version: string): string => {
-    return `https://s3.amazonaws.com/solutions-reference/aws-waf-security-automations/${version}/aws-waf-security-automations.template`;
+    if (version.startsWith('v3.')) {
+        return `https://s3.amazonaws.com/solutions-reference/aws-waf-security-automations/${version}/aws-waf-security-automations.template`;
+    }
+    return `https://s3.amazonaws.com/solutions-reference/security-automations-for-aws-waf/${version}/aws-waf-security-automations.template`;
 };
 
 interface CloudformationParameter {
