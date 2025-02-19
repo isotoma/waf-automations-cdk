@@ -2,7 +2,19 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [4.3.0](https://github.com/isotoma/waf-automations-cdk/compare/4.2.0...4.3.0)
+
+- Use Node 18 for the Lambda runtime [`#52`](https://github.com/isotoma/waf-automations-cdk/pull/52)
+- Bump aws-cdk-lib from 2.80.0 to 2.177.0 [`#55`](https://github.com/isotoma/waf-automations-cdk/pull/55)
+- Bump ws from 7.4.6 to 7.5.10 [`#54`](https://github.com/isotoma/waf-automations-cdk/pull/54)
+- Bump @babel/traverse from 7.10.5 to 7.26.9 [`#53`](https://github.com/isotoma/waf-automations-cdk/pull/53)
+- Bump aws-cdk-lib from 2.43.1 to 2.80.0 [`#44`](https://github.com/isotoma/waf-automations-cdk/pull/44)
+- Bump tough-cookie from 4.1.2 to 4.1.3 [`#46`](https://github.com/isotoma/waf-automations-cdk/pull/46)
+- Bump word-wrap from 1.2.3 to 1.2.4 [`#47`](https://github.com/isotoma/waf-automations-cdk/pull/47)
+
 #### [4.2.0](https://github.com/isotoma/waf-automations-cdk/compare/4.1.0...4.2.0)
+
+> 1 October 2024
 
 - Support solution v4 [`#51`](https://github.com/isotoma/waf-automations-cdk/pull/51)
 
