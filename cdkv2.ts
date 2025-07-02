@@ -38,7 +38,7 @@ export class WafSecurityAutomations extends Construct {
 
         const providerFunctionShared = {
             entry: path.join(__dirname, 'provider', 'index.ts'),
-            runtime: lambda.Runtime.NODEJS_18_X,
+            runtime: new lambda.Runtime('nodejs22.x', lambda.RuntimeFamily.NODEJS, { supportsInlineCode: true }),
             timeout: cdk.Duration.minutes(15),
             initialPolicy: [
                 new iam.PolicyStatement({
