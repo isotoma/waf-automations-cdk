@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [4.4.0](https://github.com/isotoma/waf-automations-cdk/compare/4.3.0...4.4.0)
+
+- Upgrade Lambda runtime from 18 to 22 [`#60`](https://github.com/isotoma/waf-automations-cdk/pull/60)
+
 #### [4.3.0](https://github.com/isotoma/waf-automations-cdk/compare/4.2.0...4.3.0)
+
+> 19 February 2025
 
 - Use Node 18 for the Lambda runtime [`#52`](https://github.com/isotoma/waf-automations-cdk/pull/52)
 - Bump aws-cdk-lib from 2.80.0 to 2.177.0 [`#55`](https://github.com/isotoma/waf-automations-cdk/pull/55)
